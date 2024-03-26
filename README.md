@@ -16,6 +16,5 @@ Discord v14 eğlence / ekonomi botu altyapısı
 # Bilgilendirme
 Sorununuz olursa discord üzerinden yardım alabilirsiniz. 15 starda bota eklemeler yapılacaktır. Bot için herhangi bir database ayarı yapmanıza gerek yok olduğu gibi local datası üzerinden çalışacaktır.
 ## Discord
-[https://discord.gg/bTGYdR7rCn](https://discord.gg/bTGYdR7rCn)
-
+senanto
 
