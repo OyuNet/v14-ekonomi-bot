@@ -27,8 +27,7 @@ if (!token) {
 
 client.once('ready', () => {
   console.log(`[ ONLINE ] - ${client.user.tag}`);
-  console.log('[ OWNER ] - senanto);
-  console.log('[ DiscordUsername ] - senanto#0');
+  console.log('[ OWNER ] - senanto');
 });
 client.commands = new Map();
 
