@@ -27,8 +27,8 @@ if (!token) {
 
 client.once('ready', () => {
   console.log(`[ ONLINE ] - ${client.user.tag}`);
-  console.log('[ OWNER ] - Puero Development');
-  console.log('[ Discord ] - https://discord.gg/6w4QfBubKY');
+  console.log('[ OWNER ] - senanto);
+  console.log('[ Discord ] - senanto#0');
 });
 client.commands = new Map();
 
