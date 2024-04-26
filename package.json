@@ -1,17 +1,18 @@
 {
   "name": "nodejs",
   "version": "1.0.0",
-  "description": "Puero Code , Ekonomi Botu",
+  "description": "Puero Code, Ekonomi Botu",
   "main": "senanto.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon senanto.js",
+    "production": "node senanto.js"
   },
   "author": "senanto",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^18.0.6",
     "discord.js": "^14.14.1",
-    "dotenv": "^16.4.5",
-    "fs": "^0.0.1-security"
+    "dotenv": "^16.4.5"
   }
 }

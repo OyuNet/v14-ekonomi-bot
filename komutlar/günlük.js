@@ -1,5 +1,6 @@
 const { Discord, EmbedBuilder, ChannelType, ButtonBuilder, ActionRowBuilder, ButtonStyle, ModalBuilder, TextInputStyle, TextInputBuilder, InteractionType, PermissionsBitField, StringSelectMenuBuilder, SlashCommandBuilder, ContextMenuCommandBuilder, ApplicationCommandType } = require ("discord.js")
 const fs = require('fs');
+const checkBalance = require("../fonksiyonlar/checkBalance");
 
 const cooldowns = new Map();
 
@@ -9,7 +10,7 @@ module.exports = {
   execute(message, args) {
     const aydi = message.author.id;
 
-    const moneyraw = fs.readFileSync('./money.json');
+    const moneyraw = fs.readFileSync('./money.json', "utf8");
     const paradata = JSON.parse(moneyraw);
 
     const zaman = Date.now();
@@ -29,11 +30,13 @@ module.exports = {
     const max = 1000;
     const miktar = Math.floor(Math.random() * (max - min + 1)) + min;
 
-    if (!(aydi in paradata)) {
-      paradata[aydi] = { money: miktar };
-    } else {
-      paradata[aydi].money += miktar;
-    }
+    checkBalance(aydi);
+    /**
+     * With this checkBalance function implementation,
+     * it's automaticly checks money value in Object.
+     */
+
+    paradata[aydi].money += miktar;
 
     fs.writeFileSync('./money.json', JSON.stringify(paradata, null, 2));
 

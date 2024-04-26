@@ -1,14 +1,16 @@
-const{ Client, Partials, Discord, MessageAutoDeleteTrigger } = require('discord.js')
+const { Client, Partials } = require('discord.js')
 const client = new Client({ intents: 131071, partials: Object.values(Partials).filter(x => typeof x === "string"), shards: 'auto' })
 const fs = require('fs');
 const { prefix } = require('./config.json');
 require('dotenv').config();
 
 let token = process.env.TOKEN;
+
 if (!token) {
     const config = require('./config.json');
     token = config.token;
 }
+
 if (!token) {
     console.error('Token bulunamadı. Lütfen .env dosyasında veya config.json dosyası içine token değerinizi tanımlayın.');
     process.exit(1);
