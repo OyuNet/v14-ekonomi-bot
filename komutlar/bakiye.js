@@ -1,5 +1,6 @@
 const { Discord, EmbedBuilder, ChannelType, ButtonBuilder, ActionRowBuilder, ButtonStyle, ModalBuilder, TextInputStyle, TextInputBuilder, InteractionType, PermissionsBitField, StringSelectMenuBuilder, SlashCommandBuilder, ContextMenuCommandBuilder, ApplicationCommandType } = require ("discord.js")
 const fs = require('fs');
+const checkBalance = require("../fonksiyonlar/checkBalance");
 
 module.exports = {
   name: 'bakiye',
@@ -10,10 +11,8 @@ module.exports = {
     const raw = fs.readFileSync('./money.json');
     const paradata = JSON.parse(raw);
 
-    if (!(aydi in paradata)) {
-      message.reply('Henüz bir hesabınız yok. Günlük komutunu kullanın.');
-      return;
-    }
+    checkBalance(aydi);
+    
     const bara = paradata[aydi].money;
     message.reply(`Hesabınızda ${bara} TL var.`);
   },
